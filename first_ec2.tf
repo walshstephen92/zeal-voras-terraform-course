@@ -8,6 +8,10 @@ terraform {
       source = "hashicorp/aws"
       version = "~> 5.0"
     }
+    azurerm = {
+      source = "hashicorp/azurerm"
+      version = "~> 4.0"
+    }
   }
 }
 
@@ -28,6 +32,12 @@ provider "aws" {
   region = "ca-central-1"
 }
 
+/*
+Azure provider. This will cause Terraform to download the Azure provider
+plugin.
+*/
+provider "azurerm" {}
+
 resource "aws_instance" "my-ec2-instance" {
   ami           = "ami-012967cc5a8c9f891"
   instance_type = "t3.micro"
@@ -37,7 +47,7 @@ resource "aws_instance" "my-ec2-instance" {
   }
 }
 
-resource "aws_instance" "canadian-ec2-instance" {
+resource "aws_instance" "my-canadian-ec2-instance" {
   # Use the Canadian AWS provider
   provider = aws.canadian-aws
   
