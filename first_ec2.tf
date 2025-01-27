@@ -1,6 +1,7 @@
 /*
 It's best practice to include the block below, specifying a provider version
 to use, ensuring compatibility and stability.
+For non-Hashicorp providers, it's not just a best practice, it's required.
 */
 terraform {
   required_providers {
