@@ -9,10 +9,6 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 5.0"
     }
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~> 4.0"
-    }
   }
 }
 
@@ -23,18 +19,3 @@ A provider block with NO ALIAS creates a DEFAULT provider configuration.
 provider "aws" {
   region = "us-east-1"
 }
-
-/*
-A provider block with an ALIAS allows you to use MULTIPLE provider
-configurations from the SAME provider.
-*/
-provider "aws" {
-  alias  = "canadian-aws"
-  region = "ca-central-1"
-}
-
-/*
-Azure provider. This will cause Terraform to download the Azure provider
-plugin.
-*/
-provider "azurerm" {}
