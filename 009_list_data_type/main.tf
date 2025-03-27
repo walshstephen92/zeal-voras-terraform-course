@@ -9,6 +9,7 @@ variable "example_list" {
 
 /*
 Accessing the elements of a list is done using the square brackets notation.
+Inside the brackets, the index of the element is specified.
 */
 output "first_item" {
   value = var.example_list[0]
@@ -25,7 +26,7 @@ output "list_length" {
 If the values are of different types, the type can be omitted.
 */
 variable "list_of_mixed_types" {
-  type    = list
+  type    = list(any)
   default = [1, "two", true]
 }
 
