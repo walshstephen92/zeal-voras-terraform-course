@@ -99,7 +99,10 @@ resource "aws_instance" "web_server_3" {
   instance_type = "t2.micro"
 
   lifecycle {
-    # This will make Terraform create/destroy the resource but never update it
+    /*
+    Ignore change to all attributes of the resource. Effectively, this will 
+    make Terraform create/destroy the resource but never update it.
+    */
     ignore_changes = all
   }
 }
